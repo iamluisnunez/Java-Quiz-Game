@@ -37,12 +37,5 @@ public class CustomHttpClient {
             return e.getMessage();
         }
     }
-    public static List<jServiceDTO> getQuestions(String httpResponseBody) throws JsonProcessingException {
-        List<jServiceDTO> fruitObj;
-        ObjectMapper objectMapper = new ObjectMapper();
-        TypeReference<List<jServiceDTO>> typeReference = new TypeReference<>() {};
-        fruitObj = objectMapper.readValue(httpResponseBody, typeReference);
-        return fruitObj;
-    }
 }
 

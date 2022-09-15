@@ -21,7 +21,6 @@ public class Main {
 
      */
     public static int randomNum(){
-
         return (int)Math.floor((Math.random() * 100) + 1);
     }
 
@@ -49,7 +48,7 @@ public class Main {
             //asking the user a question
             System.out.println("Would You like to play a game? Y/N");
             playGame = sc.nextLine();
-            while(playGame.equalsIgnoreCase("y") || counter < 10) {
+            while(playGame.equalsIgnoreCase("y") && counter < 10) {
                 System.out.println("The question is: " + jServiceObj.getClues().get(random).getQuestion());
                 System.out.println("The Category: " + jServiceObj.getClues().get(random).getCategories().getTitle());
                 answer = jServiceObj.getClues().get(random).getAnswer();
@@ -65,10 +64,13 @@ public class Main {
                 counter++;
                 random = randomNum();
             }
+            System.out.println();
             System.out.println("Thanks for playing!");
             System.out.println("Your total points are " + points);
 
 
+        } catch (IndexOutOfBoundsException e){
+            System.out.println("Thanks for playing!");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
