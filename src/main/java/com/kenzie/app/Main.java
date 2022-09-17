@@ -20,24 +20,19 @@ public class Main {
        - The rest is up to you. Good luck and happy coding!
 
      */
-    public static int randomNum(){
-        return (int)Math.floor((Math.random() * 100) + 1);
-    }
-
-
-    public static void main(String[] args)  {
+    public static void startGame(){
         try {
-        String URL = "https://jservice.kenzie.academy/api/clues";
-        String responseBody = CustomHttpClient.sendGET(URL);
-        String answer = "";
-        String userAnswer = "";
-        String playGame = "";
-        Scanner sc = new Scanner(System.in);
-        int points = 0;
-        int random = randomNum();
-        int counter = 0;
+            String URL = "https://jservice.kenzie.academy/api/clues";
+            String responseBody = CustomHttpClient.sendGET(URL);
+            String answer = "";
+            String userAnswer = "";
+            String playGame = "";
+            Scanner sc = new Scanner(System.in);
+            int points = 0;
+            int random = randomNum();
+            int counter = 0;
 
-        //JSON Mapping
+            //JSON Mapping
             //1. Instantiate Object Mapper
             //2. create DTO
             //3. readValue
@@ -74,6 +69,13 @@ public class Main {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+    public static int randomNum(){
+        return (int)Math.floor((Math.random() * 100) + 1);
+    }
+
+    public static void main(String[] args)  {
+        startGame();
     }
 }
 

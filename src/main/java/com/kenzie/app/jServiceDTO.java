@@ -12,8 +12,8 @@ public class jServiceDTO {
     public List<Clues> getClues() {
         return clues;
     }
-
     public void setClues(List<Clues> clues) {
         this.clues = clues;
     }
+
 }
